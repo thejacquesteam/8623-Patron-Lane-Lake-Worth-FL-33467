@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>8623 Patron Lane | Lake Worth, FL 33467</title>
+  <meta name="description" content="View 8623 Patron Lane in Lake Worth, FL 33467. A newer-construction home in The Fields with 3 bedrooms, a den/office, an extra loft area, 2.5 bathrooms, 2,530 sq ft, a heated saltwater pool and spa, and a 2-car garage." />
+
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --bg-soft:#121214;
+      --bg-card:#141416;
+      --text:#f5f2eb;
+      --muted:#b6b0a5;
+      --line:rgba(255,255,255,.10);
+      --gold:#c8a46a;
+      --gold-2:#d6b57f;
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+      --max:1200px;
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(10,10,11,.72);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:.8rem;
+      color:var(--text);
+    }
+    .brand-mark{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      background:#445000;
+      border:1px solid rgba(214,181,127,.35);
+    }
+
+    .brand-mark img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      display:block;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:26px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav-links a{
+      font-size:.82rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:rgba(245,242,235,.82);
+      transition:color .25s ease, opacity .25s ease;
+    }
+
+    .nav-links a:hover{color:var(--gold-2)}
+
+    .hero{
+      position:relative;
+      min-height:calc(100vh - 72px);
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(90deg, rgba(11,11,12,.92) 0%, rgba(11,11,12,.78) 44%, rgba(11,11,12,.22) 100%),
+        linear-gradient(180deg, rgba(11,11,12,.18) 0%, rgba(11,11,12,.62) 100%),
+        url('hero.jpg') center/cover no-repeat;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(200,164,106,.12), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,.05), transparent 18%);
+      pointer-events:none;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      padding:90px 0 42px;
+      width:100%;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      color:rgba(245,242,235,.7);
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      font-size:.72rem;
+      margin-bottom:18px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:36px;
+      height:1px;
+      background:rgba(200,164,106,.75);
+    }
+
+    .price{
+      color:var(--gold-2);
+      font-family:Georgia, "Times New Roman", serif;
+      font-style:italic;
+      font-size:1.1rem;
+      margin-bottom:12px;
+    }
+
+    h1{
+      margin:0;
+      max-width:800px;
+      font-size:clamp(3rem, 7vw, 6.5rem);
+      line-height:.94;
+      letter-spacing:-.04em;
+      text-wrap:balance;
+    }
+
+    .subhead{
+      margin-top:22px;
+      max-width:680px;
+      color:rgba(245,242,235,.82);
+      font-size:1.05rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      text-transform:uppercase;
+      letter-spacing:.15em;
+      font-size:.78rem;
+      transition:transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg, var(--gold), var(--gold-2));color:#1a140d;border-color:transparent;box-shadow:0 10px 30px rgba(200,164,106,.22)}
+    .btn.secondary{background:rgba(255,255,255,.02);color:var(--text)}
+    .btn.secondary:hover{border-color:rgba(214,181,127,.55);color:var(--gold-2)}
+
+    .hero-meta{margin-top:28px;display:flex;gap:22px;flex-wrap:wrap;color:rgba(245,242,235,.62);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase}
+    .stats{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .stats-grid{display:grid;grid-template-columns:repeat(5, 1fr);gap:0}
+    .stat{padding:26px 18px;text-align:center;border-right:1px solid var(--line)}
+    .stat:last-child{border-right:none}
+    .stat strong{display:block;font-size:1.35rem;font-weight:500;letter-spacing:-.02em}
+    .stat span{display:block;margin-top:8px;color:var(--muted);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
+
+    section{padding:92px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:30px}
+    .kicker{color:var(--gold-2);letter-spacing:.24em;text-transform:uppercase;font-size:.74rem;margin-bottom:12px}
+    h2{margin:0;font-size:clamp(2rem, 4vw, 3.1rem);line-height:1.02;letter-spacing:-.03em}
+    .lead{max-width:660px;color:var(--muted);font-size:1.04rem}
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .overview{padding:34px}
+    .overview p{margin:0;color:rgba(245,242,235,.84);font-size:1.05rem;max-width:980px}
+
+    .video-wrap{position:relative;width:100%;aspect-ratio:16 / 9;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#111}
+    .video-wrap iframe{width:100%;height:100%;display:block}
+
+    .gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}
+    .photo{position:relative;overflow:hidden;border-radius:20px;min-height:240px;background:#19191c;border:1px solid var(--line)}
+    .photo.big{grid-row:span 2;min-height:494px}
+    .photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .photo:hover img{transform:scale(1.03)}
+    .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.16));pointer-events:none}
+
+    .features{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px}
+    .feature{padding:22px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid var(--line);transition:transform .2s ease, border-color .2s ease, background .2s ease}
+    .feature:hover{transform:translateY(-2px);border-color:rgba(214,181,127,.35);background:rgba(255,255,255,.045)}
+    .feature h3{margin:0 0 8px;font-size:1rem;letter-spacing:-.01em}
+    .feature p{margin:0;color:var(--muted);font-size:.96rem}
+
+    .location-wrap,.faq-wrap,.inquire-wrap{padding:34px}
+    .location-copy{max-width:940px;color:rgba(245,242,235,.84);font-size:1.04rem}
+    .faq{display:grid;gap:12px;margin-top:16px}
+    details{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+    summary{cursor:pointer;list-style:none;font-weight:500;letter-spacing:-.01em}
+    summary::-webkit-details-marker{display:none}
+    details p{margin:12px 0 0;color:var(--muted)}
+
+    .inquire-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:18px}
+    .form{display:grid;gap:14px}
+    .field{display:grid;gap:8px}
+    label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,242,235,.72)}
+    input,textarea{width:100%;background:#0f0f11;border:1px solid var(--line);color:var(--text);border-radius:16px;padding:14px 16px;font:inherit;outline:none}
+    input:focus,textarea:focus{border-color:rgba(214,181,127,.55);box-shadow:0 0 0 3px rgba(200,164,106,.12)}
+    textarea{min-height:130px;resize:vertical}
+    .contact-box{padding:24px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid var(--line);display:grid;align-content:start;gap:14px}
+    .contact-box a{color:var(--gold-2)}
+    .fine{color:var(--muted);font-size:.94rem}
+    footer{padding:36px 0 60px;color:rgba(245,242,235,.5);border-top:1px solid var(--line);font-size:.9rem}
+
+    @media (max-width:980px){
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .stat:nth-child(2n){border-right:none}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .photo.big{grid-column:1 / -1;min-height:380px}
+      .features{grid-template-columns:1fr 1fr}
+      .inquire-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width:720px){
+      .nav-inner{align-items:flex-start;padding:14px 0;flex-direction:column}
+      .nav-links{gap:16px}
+      .hero{min-height:auto}
+      .hero-inner{padding:80px 0 36px}
+      .subhead{font-size:.92rem}
+      .stats-grid{grid-template-columns:1fr}
+      .stat{border-right:none;border-bottom:1px solid var(--line)}
+      .stat:last-child{border-bottom:none}
+      section{padding:72px 0}
+      .section-head{flex-direction:column;align-items:flex-start}
+      .gallery-grid,.features{grid-template-columns:1fr}
+      .photo.big{min-height:300px}
+      .overview,.location-wrap,.faq-wrap,.inquire-wrap{padding:24px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="logo.png" alt="The Jacques Real Estate Team logo" />
+        </div>
+        <div>The Jacques Real Estate Team</div>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#video">Video</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#features">Features</a>
+        <a href="#location">Location</a>
+        <a href="#faq">FAQ</a>
+        <a href="#inquire">Inquire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="eyebrow">Exclusive listing · Lake Worth</div>
+        <div class="price">Offered at $840,000</div>
+        <h1>A Newer-Construction Retreat in The Fields</h1>
+        <div class="subhead">8623 Patron Lane · Lake Worth, FL 33467</div>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#overview">Explore the Residence</a>
+          <a class="btn secondary" href="#inquire">Schedule Private Tour</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>The Fields</span>
+          <span>3 Bedrooms + Den/Office + Loft</span>
+          <span>Heated Saltwater Pool & Spa</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat"><strong>3 + Den</strong><span>Bedrooms / Office</span></div>
+        <div class="stat"><strong>2.5</strong><span>Bathrooms</span></div>
+        <div class="stat"><strong>2,530</strong><span>Sq Ft</span></div>
+        <div class="stat"><strong>Loft</strong><span>Extra Flex Area</span></div>
+        <div class="stat"><strong>2-Car</strong><span>Garage</span></div>
+      </div>
+    </section>
+
+    <section id="overview">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Overview</div>
+            <h2>Modern comfort, thoughtful upgrades, and a private outdoor escape.</h2>
+          </div>
+          <div class="lead">Set inside the gated community of The Fields, this newer home blends open-concept living with premium finishes, smart details, and a resort-style backyard.</div>
+        </div>
+
+        <div class="panel overview">
+          <p>
+            8623 Patron Lane offers 2,530 square feet of beautifully designed living space in one of Lake Worth’s desirable newer communities. Built in 2023, this DiVosta Fifth Avenue model features 3 bedrooms, 2.5 bathrooms, a dedicated den/office, an extra loft area, a 2-car garage, and a flexible layout designed for both everyday living and added workspace. The main living area feels bright and connected, with wood-look tile flooring, built-in Sonos speakers, and a stylish kitchen anchored by a large quartz island, stainless steel appliances, gas range, and pantry. Outside, the covered lanai, electric screened enclosure, heated saltwater pool and spa, and custom landscaping create a private setting made for everyday relaxation and easy South Florida entertaining.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Video Tour</div>
+            <h2>Experience 8623 Patron Lane in motion.</h2>
+          </div>
+          <div class="lead">A closer look at the open layout, modern kitchen, flexible living spaces, and private poolside setting.</div>
+        </div>
+
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/gaykDB_yrCg?si=36WZNd1AD-RHCO0Z"
+            title="8623 Patron Lane Video Tour"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Gallery</div>
+            <h2>Fresh interiors, refined finishes, and a backyard designed for privacy.</h2>
+          </div>
+          <div class="lead">A curated look at the home’s open living spaces, kitchen details, private suite, and outdoor retreat.</div>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="photo big"><img src="hero.jpg" alt="8623 Patron Lane hero property image" /></div>
+          <div class="photo"><img src="gallery-2.jpg" alt="8623 Patron Lane interior living area" /></div>
+          <div class="photo"><img src="gallery-3.jpg" alt="8623 Patron Lane kitchen and dining area" /></div>
+          <div class="photo"><img src="gallery-4.jpg" alt="8623 Patron Lane primary suite" /></div>
+          <div class="photo"><img src="gallery-5.jpg" alt="8623 Patron Lane outdoor pool and patio area" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Features</div><h2>Designed for easy living, modern comfort, and everyday connection.</h2></div>
+          <div class="lead">From the flexible floor plan to the poolside outdoor space, each detail supports a polished Lake Worth lifestyle.</div>
+        </div>
+
+        <div class="features">
+          <div class="feature"><h3>DiVosta Fifth Avenue model</h3><p>A sought-after floor plan with flexible spaces, open living, and modern function.</p></div>
+          <div class="feature"><h3>Built in 2023</h3><p>Newer construction with a fresh, modern feel and low-maintenance appeal.</p></div>
+          <div class="feature"><h3>3 bedrooms + den/office</h3><p>A smart layout with comfortable bedroom space plus a dedicated area for work, study, or flex use.</p></div>
+          <div class="feature"><h3>2.5 bathrooms</h3><p>Comfortable bath layout for daily living and entertaining.</p></div>
+          <div class="feature"><h3>2,530 square feet</h3><p>Generous interior living space with a bright and connected layout.</p></div>
+          <div class="feature"><h3>Open-concept living</h3><p>The main living areas are designed for gathering, hosting, and everyday ease.</p></div>
+          <div class="feature"><h3>Quartz kitchen island</h3><p>A large central island anchors the kitchen with space for prep and casual seating.</p></div>
+          <div class="feature"><h3>Stainless steel appliances</h3><p>A clean, modern appliance package including a gas range.</p></div>
+          <div class="feature"><h3>Built-in Sonos speakers</h3><p>Integrated audio adds comfort and convenience to the main living areas.</p></div>
+          <div class="feature"><h3>Extra loft area</h3><p>An additional upstairs flex space ideal for media, work, play, fitness, or relaxed everyday use.</p></div>
+          <div class="feature"><h3>Spa-like primary suite</h3><p>A private upper-level retreat with a polished bath and walk-in closet.</p></div>
+          <div class="feature"><h3>Covered lanai</h3><p>Outdoor living space designed for shade, comfort, and year-round use.</p></div>
+          <div class="feature"><h3>Electric screened enclosure</h3><p>A practical upgrade that makes the outdoor area feel more private and usable.</p></div>
+          <div class="feature"><h3>Heated saltwater pool and spa</h3><p>A resort-style backyard feature for relaxing, entertaining, and enjoying South Florida weather.</p></div>
+          <div class="feature"><h3>The Fields lifestyle</h3><p>Gated community living with clubhouses, pools, fitness centers, tennis, basketball, and pickleball.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="location">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Location</div><h2>Lake Worth living with newer community convenience.</h2></div>
+          <div class="lead">The Fields offers a gated neighborhood setting with access to daily essentials, recreation, dining, shopping, and major routes.</div>
+        </div>
+        <div class="panel location-wrap">
+          <p class="location-copy">Located in Lake Worth, FL, 8623 Patron Lane places you inside The Fields, a gated residential community known for newer homes, neighborhood amenities, and everyday convenience. Residents enjoy access to clubhouses, pools, fitness centers, tennis courts, basketball, pickleball, and community gathering spaces. The location also offers practical access to the Turnpike, shopping, dining, area schools, and nearby Palm Beach County destinations, creating a balanced setting for both daily routines and weekend plans.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">FAQ</div><h2>Helpful details for prospective buyers.</h2></div>
+          <div class="lead">Quick answers to common questions about the home, community, nearby schools, dining, parks, attractions, and private showing options.</div>
+        </div>
+        <div class="panel faq-wrap">
+          <div class="faq">
+            <details><summary>Where is 8623 Patron Lane located?</summary><p>It is located in Lake Worth, Florida, inside the gated community of The Fields.</p></details>
+            <details><summary>How many bedrooms and bathrooms does the home have?</summary><p>The home offers 3 bedrooms, a den/office, an extra loft area, and 2.5 bathrooms.</p></details>
+            <details><summary>How large is the home?</summary><p>The residence offers approximately 2,530 square feet of living space.</p></details>
+            <details><summary>When was the home built?</summary><p>The home was built in 2023.</p></details>
+            <details><summary>Does the home have a pool?</summary><p>Yes. The property features a heated saltwater pool and spa with a covered lanai and electric screened enclosure.</p></details>
+            <details><summary>What community is the home located in?</summary><p>The home is located in The Fields, a gated Lake Worth community with amenities including clubhouses, pools, fitness centers, tennis, basketball, and pickleball.</p></details>
+            <details><summary>What schools are nearby?</summary><p>Nearby schools include Discovery Key Elementary School, Woodlands Middle School, and Dr. Joaquin Garcia High School. Buyers should verify current school boundaries directly with Palm Beach County Schools, as school assignments may change.</p></details>
+            <details><summary>What restaurants are close to the home?</summary><p>Nearby dining options include Mamma Mia’s Trattoria on Hypoluxo Road and Bonefish Grill on Lake Worth Road, along with additional restaurants, shops, and everyday conveniences throughout Lake Worth, Wellington, and western Palm Beach County.</p></details>
+            <details><summary>What parks and attractions are nearby?</summary><p>The home offers convenient access to Okeeheelee Park, Okeeheelee Nature Center, John Prince Park, The Mall at Wellington Green, Mounts Botanical Garden, and the dining, beach, and downtown attractions of Lake Worth Beach.</p></details>
+            <details><summary>How do I schedule a private showing?</summary><p>Use the inquiry form below or contact The Jacques Real Estate Team directly by email or phone.</p></details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="inquire">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Inquire</div><h2>Request pricing details, private showing options, or additional property information.</h2></div>
+          <div class="lead">Connect with The Jacques Real Estate Team for private showing options and additional property details.</div>
+        </div>
+        <div class="panel inquire-wrap">
+          <div class="inquire-grid">
+            <form class="form" action="https://formspree.io/f/xqevajpq" method="POST">
+              <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required /></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" /></div>
+              <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what you'd like to know about 8623 Patron Lane."></textarea></div>
+              <input type="hidden" name="_subject" value="New inquiry for 8623 Patron Lane" />
+              <input type="hidden" name="source" value="8623 Patron Lane Landing Page" />
+              <input type="hidden" name="property" value="8623 Patron Lane, Lake Worth, FL 33467" />
+              <input type="hidden" name="lead_type" value="Property Inquiry" />
+              <button class="btn primary" type="submit">Send Inquiry</button>
+            </form>
+
+            <div class="contact-box">
+              <div class="kicker">The Jacques Real Estate Team</div>
+              <div><a href="mailto:info@jacquesrealty.com">info@jacquesrealty.com</a></div>
+              <div><a href="tel:+15616785584">(561) 678-5584</a></div>
+              <div class="fine">Interested in 8623 Patron Lane? Request pricing details, private showing options, or additional property information.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© 2026 The Jacques Real Estate Team. 8623 Patron Lane, Lake Worth, FL 33467.</div></footer>
+</body>
+</html>
